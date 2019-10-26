@@ -17,6 +17,13 @@ public class ClosestToTen {
     public static float closestToTen(float m, float n) {
         // TODO implement
 
-        return 0;
+        double mdif = m > 10.0 ? m - 10.0 : 10.0 - m;
+        double ndif = n > 10.0 ? n - 10.0 : 10.0 - n;
+
+        if (mdif > ndif) {
+            return n;
+        }
+
+        return m;
     }
 }
