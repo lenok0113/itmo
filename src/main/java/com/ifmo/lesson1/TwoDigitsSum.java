@@ -6,16 +6,14 @@ public class TwoDigitsSum {
     Создайте программу, вычисляющую и выводящую на экран сумму цифр числа n.
      */
     public static void main(String[] args) {
-        int n = 23;
+        int n = 13;
 
-        int sum = sum(n);
+        int sum = 0;
+        while (n > 0) {
+            sum = sum + n % 10;
+            n = n / 10;
+        }
+            System.out.println(sum);
 
-        System.out.println(sum);
+        }
     }
-
-    public static int sum(int n) {
-        // TODO implement
-
-        return 0;
-    }
-}

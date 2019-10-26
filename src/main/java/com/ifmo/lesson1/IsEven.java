@@ -6,9 +6,13 @@ public class IsEven {
     Попробуйте сделать при помощи битовых операций.
      */
     public static void main(String[] args) {
-        int n = 24;
+        int n = 245;
 
-        System.out.println(isEven(n));
+if (n % 2 == 0)
+{
+    System.out.printf("True");
+}
+else System.out.println("False");;
     }
 
     public static boolean isEven(int n) {
