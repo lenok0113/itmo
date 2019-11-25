@@ -9,26 +9,15 @@ public class Dividers {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Input a number: ");
-                int n = scanner.nextInt();
 
-        int digitSum = digitSum(n);
+        int n = scanner.nextInt();
 
-        System.out.println(digitSum);
-    }
-
-    public static int digitSum(int n) {
         // TODO implement
-
-        int sum = 0;
-
-        while (n > 0) {
-            int num = n % 10;
-            sum += num;
-            n -= num;
-            n /= 10;
+        for (int i = 1; i <=n; i++) {
+            if (n % i == 0)
+                System.out.print(i +" ");
         }
 
-        return sum;
+        System.out.print("\n");
     }
 }

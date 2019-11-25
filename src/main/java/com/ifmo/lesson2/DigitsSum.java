@@ -20,7 +20,6 @@ public class DigitsSum {
     public static int digitSum(int n) {
         // TODO implement
 
-
         int sum = 0;
 
         while (n > 0) {
@@ -32,4 +31,4 @@ public class DigitsSum {
 
         return sum;
     }
-}
+ }

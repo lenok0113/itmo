@@ -6,18 +6,14 @@ public class IsEven {
     Попробуйте сделать при помощи битовых операций.
      */
     public static void main(String[] args) {
-        int n = 245;
-
-if (n % 2 == 0)
-{
-    System.out.printf("True");
-}
-else System.out.println("False");;
+        int n = 12;
+        boolean res = isEven(n);
+        System.out.println(res);
     }
 
     public static boolean isEven(int n) {
         // TODO implement
-
+        if (n % 2 == 0) return true;
         return false;
     }
 }
