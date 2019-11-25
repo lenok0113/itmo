@@ -8,6 +8,7 @@ public class SquareEquation {
      будет находить и выводить на экран вещественные корни квадратного уравнения ax²+bx+c=0,
      либо сообщать, что корней нет.
      */
+    /*
     public static void main(String[] args) {
         double a = 2;
         double b = -9;
@@ -21,9 +22,28 @@ public class SquareEquation {
     /*
     Возвращает массив из двух корней или null, если таковых нет.
      */
+    /*
     public static double[] squareEquationRoots(double a, double b, double c) {
         // TODO implement
+        if (a == 0.0) {
+            double x = - c / b;
+            double[] roots = new double[1]{x};
+        }
+        else {
+            int d = b * b - 4 * a * c;
+            if (d == 0) {
+                x = -b / (2 * a);
+                double[] roots = new double[1] {x}
+            }
+            if (d > 0.0) {
+                double[] roots = new double[2];
+                d = Math.sqrt(d);
+                roots[0] = (- b - d) / (2 * a);
+                roots[1] = (- b + d) / (2 * a);
+            }
+        }
 
         return null;
     }
+    */
 }

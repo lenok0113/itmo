@@ -1,5 +1,7 @@
 package com.ifmo.lesson2;
 
+import java.util.Random;
+
 public class WallClock {
     /*
     На некотором предприятии инженер Петров создал устройство, на табло которого
@@ -39,13 +41,22 @@ public class WallClock {
 
     public static int randomSecond() {
         // TODO implement
-
-        return 0;
+        Random randomGenerator = new Random();
+        int seconds = randomGenerator.nextInt(28800 + 1);
+        return seconds;
     }
 
     public static String remainingHours(int rndSecond) {
         // TODO implement
-
-        return "Осталось менее часа";
+        int hours = rndSecond % (60 * 60);
+        System.out.println(hours);
+        String rHours = switch (hours) {
+            case 8, 7, 6, 5 -> "Осталось " + hours + " часов";
+            case 4, 3, 2 -> "Осталось " + hours + " часа";
+            case 1 -> "Остался 1 час";
+            default ->
+                "Осталось менее часа";
+        };
+        return rHours;
     }
 }

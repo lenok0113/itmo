@@ -15,7 +15,10 @@ public class FloatRound {
 
     public static float round(float n) {
         // TODO implement
+        int digit = (int) ((n * 10) % 10);
+        if (digit < 5)
+            return (int) (n - (n % 1));
+        else return (int) ((n - (n % 1)) + 1);
 
-        return 0;
     }
 }

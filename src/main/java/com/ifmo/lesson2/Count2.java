@@ -16,7 +16,22 @@ public class Count2 {
 
     public static int count2() {
         // TODO implement
+        int count = 0;
+        for (int i = 1; i <= 50000; i++) {
+            count += isCorrect(i);
+        }
+        return count;
+    }
 
-        return 0;
+    public static int isCorrect(int n) {
+        // проверка на отсутствие двоек в числе
+        int lastDigit = 0;
+        while (n > 0) {
+            lastDigit = n % 10;
+            if (lastDigit == 2)
+                return 0;
+            n /= 10;
+        }
+        return 1;
     }
 }

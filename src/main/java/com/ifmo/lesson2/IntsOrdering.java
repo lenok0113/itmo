@@ -26,8 +26,14 @@ public class IntsOrdering {
 
     public static String ordering(int a, int b, int c) {
         // TODO implement
+        int min = (a < b) ? a : b;
+        min = (min < c) ? min : c;
+        int max = (a > b) ? a : b;
+        max = (max > c) ? max : c;
+        int med = (a < max && a > min) ? a : b;
+        med = (med > min && med < max) ? med : c;
 
         return "Числа в переменных a, b и c: " + a + ", " + b + ", " + c + "\n" +
-                "Возрастающая последовательность: " + 0 + ", " + 0 + ", " + 0;
+                "Возрастающая последовательность: " + min + ", " + med + ", " + max;
     }
 }

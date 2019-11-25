@@ -7,5 +7,13 @@ public class First20 {
      */
     public static void main(String[] args) {
         // TODO implement
+        int i = 2;
+        for (int count = 1; count <= 20; count++) {
+            System.out.print(i + " ");
+            i *= 2;
+        }
+
+        System.out.print("\n");
+
     }
 }

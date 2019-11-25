@@ -12,7 +12,9 @@ public class SymmetricClocks {
 
     public static int symmetricTimes() {
         // TODO implement
-
-        return 0;
+        int sum = 0;
+        sum += 10 * 9; // РІСЂРµРјСЏ С„РѕСЂРјР°С‚Р° AB:BA
+        sum += 10; // РІСЂРµРјСЏ С„РѕСЂРјР°С‚Р° AA:AA
+        return sum;
     }
 }
