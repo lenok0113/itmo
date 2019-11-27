@@ -16,9 +16,14 @@ public class FloatRound {
     public static float round(float n) {
         // TODO implement
         int digit = (int) ((n * 10) % 10);
+        if (digit < 0) digit = -digit;
+        if (n > 0) {
+            if (digit < 5)
+                return (int) (n - (n % 1));
+            else return (int) ((n - (n % 1)) + 1);
+        }
         if (digit < 5)
             return (int) (n - (n % 1));
-        else return (int) ((n - (n % 1)) + 1);
-
+        return n - (n % 1) - 1;
     }
 }
