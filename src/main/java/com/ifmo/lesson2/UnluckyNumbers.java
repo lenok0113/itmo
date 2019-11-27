@@ -15,7 +15,20 @@ public class UnluckyNumbers {
 
     public static int unluckyNumbersCount() {
         // TODO implement
+        int sum = 0;
+               for (int i = 1; i <= 99999; i++){
+                    if (isUnlucky(i))
+                        sum++;
+        }
+        return sum;
+    }
 
-        return 0;
+    public static boolean isUnlucky(int n) {
+        while (n > 0) {
+            if (n % 100 == 13 || n % 10 == 4)
+                return true;
+            n /= 10;
+        }
+        return false;
     }
 }

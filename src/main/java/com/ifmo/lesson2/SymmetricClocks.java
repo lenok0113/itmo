@@ -13,8 +13,12 @@ public class SymmetricClocks {
     public static int symmetricTimes() {
         // TODO implement
         int sum = 0;
-        sum += 10 * 9; // РІСЂРµРјСЏ С„РѕСЂРјР°С‚Р° AB:BA
-        sum += 10; // РІСЂРµРјСЏ С„РѕСЂРјР°С‚Р° AA:AA
+        for (int i = 0; i <= 23 * 60 + 59; i++) {
+            int hours = i / 60;
+            int minutes = i % 60;
+            if ((hours % 10 == minutes / 10) && (hours / 10 == minutes % 10))
+                sum++;
+        }
         return sum;
     }
 }

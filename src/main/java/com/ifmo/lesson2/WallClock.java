@@ -48,14 +48,18 @@ public class WallClock {
 
     public static String remainingHours(int rndSecond) {
         // TODO implement
-        int hours = rndSecond % (60 * 60);
-        System.out.println(hours);
-        String rHours = switch (hours) {
-            case 8, 7, 6, 5 -> "Осталось " + hours + " часов";
-            case 4, 3, 2 -> "Осталось " + hours + " часа";
-            case 1 -> "Остался 1 час";
-            default ->
-                "Осталось менее часа";
+        int hours = rndSecond / (60 * 60);
+        String rHours;
+        switch (hours) {
+            case 8:
+            case 7:
+            case 6:
+            case 5: rHours = "Осталось " + hours + " часов"; break;
+            case 4:
+            case 3:
+            case 2: rHours = "Осталось " + hours + " часа"; break;
+            case 1: rHours = "Остался 1 час"; break;
+            default: rHours = "Осталось менее часа"; break;
         };
         return rHours;
     }
