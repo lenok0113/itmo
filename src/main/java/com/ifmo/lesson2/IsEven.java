@@ -17,6 +17,6 @@ public class IsEven {
         if (n % 2 == 1) {
             return "Нечетное";
         }
-        return "Чётное";
+        return "Четное";
     }
 }
