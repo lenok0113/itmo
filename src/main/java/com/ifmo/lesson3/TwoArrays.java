@@ -48,6 +48,7 @@ public class TwoArrays {
         for (int i = 0; i < randomNumbers.length; i++) {
             sum += randomNumbers[i];
         }
+        sum /= randomNumbers.length;
         return sum;
     }
 }
