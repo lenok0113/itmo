@@ -37,10 +37,16 @@ package com.ifmo.lesson4;
  * </pre>
  */
 public class Library {
+    BookInLibrary[] books;
+    int maxBookKinds;
+    int currentBookKinds;
 
     public Library(int maxBookKinds) {
         // TODO implement
         // Возможно здесь следует сынициализировать массив.
+        this.maxBookKinds = maxBookKinds;
+        this.books = new BookInLibrary[maxBookKinds];
+        this.currentBookKinds = 0;
     }
 
     /**
@@ -52,7 +58,18 @@ public class Library {
      */
     public boolean put(Book book, int quantity) {
         // TODO implement
-
+        BookInLibrary item = new BookInLibrary(book, quantity);
+        for (int i = 0; i < currentBookKinds; i++) {
+            if (books[i].equals(item)) {
+                books[i].quantity += quantity;
+                return true;
+            }
+        }
+        if (currentBookKinds != maxBookKinds) {
+            books[currentBookKinds] = item;
+            currentBookKinds++;
+            return true;
+        }
         return false;
     }
 
@@ -65,7 +82,22 @@ public class Library {
      */
     public int take(Book book, int quantity) {
         // TODO implement
-
+        BookInLibrary item = new BookInLibrary(book, quantity);
+        for (int i = 0; i < currentBookKinds; i++) {
+            if (books[i].equals(item)) {
+                if (books[i].quantity > quantity) {
+                    books[i].quantity -= quantity;
+                    return quantity;
+                }
+                quantity = books[i].quantity;
+                for (int j = i; j < currentBookKinds; j++) {
+                    books[j] = books[j + 1];
+                }
+                books[currentBookKinds] = null;
+                currentBookKinds--;
+                return quantity;
+            }
+        }
         return 0;
     }
 }

@@ -16,6 +16,9 @@ public class LinkedList {
      */
     public void add(Object val) {
         // TODO implement
+        Item item = new Item(value);
+        if (head != null) head.next = item;
+        else head = item;
     }
 
     /**
@@ -27,8 +30,14 @@ public class LinkedList {
      */
     public Object get(int i) {
         // TODO implement
-
-        return null;
+        Item item = head;
+        if (item == null)
+            return null;
+        for (int k = 0; k < i; k++) {
+            if (item.next != null) item = item.next;
+            else return null;
+        }
+        return item;
     }
 
     /**
@@ -40,7 +49,12 @@ public class LinkedList {
      */
     public Object remove(int i) {
         // TODO implement
-
-        return null;
+        Item item = head;
+        Item del = get(i);
+        while (item.next != del) {
+            item = item.next;
+        }
+        item.next = del.next
+        return del;
     }
 }
