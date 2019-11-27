@@ -49,6 +49,7 @@ public class Library {
         this.currentBookKinds = 0;
     }
 
+
     /**
      * Add books to library.
      *
@@ -60,7 +61,7 @@ public class Library {
         // TODO implement
         BookInLibrary item = new BookInLibrary(book, quantity);
         for (int i = 0; i < currentBookKinds; i++) {
-            if (books[i].equals(item)) {
+            if (books[i].book.author.equals(item.book.author) && books[i].book.title.equals(item.book.title)) {
                 books[i].quantity += quantity;
                 return true;
             }
@@ -84,16 +85,16 @@ public class Library {
         // TODO implement
         BookInLibrary item = new BookInLibrary(book, quantity);
         for (int i = 0; i < currentBookKinds; i++) {
-            if (books[i].equals(item)) {
+            if (books[i].book.title.equals(item.book.title) && books[i].book.author.equals(item.book.author)) {
                 if (books[i].quantity > quantity) {
                     books[i].quantity -= quantity;
                     return quantity;
                 }
                 quantity = books[i].quantity;
-                for (int j = i; j < currentBookKinds; j++) {
+                for (int j = i; j < currentBookKinds - 1; j++) {
                     books[j] = books[j + 1];
                 }
-                books[currentBookKinds] = null;
+                books[currentBookKinds - 1] = null;
                 currentBookKinds--;
                 return quantity;
             }

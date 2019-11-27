@@ -10,7 +10,7 @@ public class BookInLibrary {
     }
 
     public boolean equals(BookInLibrary a, BookInLibrary b) {
-        if (a.book.author.equals(b.book.author) && a.book.title.equals(b.book.title) && a.quantity == b.quantity)
+        if (a.book.author.equals(b.book.author) && a.book.title.equals(b.book.title))
             return true;
         return false;
     }
