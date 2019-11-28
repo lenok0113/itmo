@@ -22,7 +22,7 @@ public class BiggestInRandom {
         // TODO implement
 
         Random randomGenerator = new Random();
-        int first = randomGenerator.nextInt(10) + 1;
+        int first = randomGenerator.nextInt(9) + 1;
         int second = randomGenerator.nextInt(11);
         int third = randomGenerator.nextInt(11);
 
