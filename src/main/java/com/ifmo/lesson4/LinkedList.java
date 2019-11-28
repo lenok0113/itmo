@@ -14,7 +14,7 @@ public class LinkedList {
     /**
      * Добавляет значение в конец списка.
      *
-     * @param val Значение, которое будет добавлено.
+     * param value Значение, которое будет добавлено.
      */
 
     LinkedList(Item head) {
@@ -77,4 +77,22 @@ public class LinkedList {
         item.next = del.next;
         return del;
     }
+
+    /*public static void main(String[] args) {
+        LinkedList list = new LinkedList(new Item(9));
+        list.add(15);
+        list.add(71);
+        Item check = (Item) list.get(0);
+        System.out.println(check.value);
+        check = (Item) list.get(1);
+        System.out.println(check.value);
+        check = (Item) list.get(2);
+        System.out.println(check.value);
+        check = (Item) list.remove(1);
+        System.out.println(check.value);
+        check = (Item) list.remove(1);
+        System.out.println(check.value);
+        check = (Item) list.remove(0);
+        System.out.println(check.value);
+    }*/
 }
