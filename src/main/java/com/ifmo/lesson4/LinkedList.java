@@ -78,7 +78,7 @@ public class LinkedList {
         return del;
     }
 
-    /*public static void main(String[] args) {
+    /* public static void main(String[] args) {
         LinkedList list = new LinkedList(new Item(9));
         list.add(15);
         list.add(71);
