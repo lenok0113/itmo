@@ -13,8 +13,10 @@ public class EvenArray {
         // TODO implement
         for (int i = 0; i < evenArray.length; i++)
             System.out.print(evenArray[i] + " ");
+
         System.out.print("\n");
-        for (int i = 0; i< evenArray.length; i++)
+
+        for (int i = 0; i < evenArray.length; i++)
             System.out.println(evenArray[i]);
     }
 

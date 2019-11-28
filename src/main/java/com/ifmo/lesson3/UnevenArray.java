@@ -12,6 +12,7 @@ public class UnevenArray {
         int[] unevenArray = unevenArray();
 
         // TODO implement
+
         for (int i = 0; i < unevenArray.length; i++)
             System.out.print(unevenArray[i] + " ");
 

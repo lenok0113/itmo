@@ -20,7 +20,8 @@ public class Count2 {
         for (int i = 1; i <= 50000; i++) {
             count += isCorrect(i);
         }
-        return 50000 - count;
+        count = 50000 - count;
+        return count;
     }
 
     public static int isCorrect(int n) {
