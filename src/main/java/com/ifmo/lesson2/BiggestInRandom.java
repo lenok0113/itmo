@@ -23,8 +23,8 @@ public class BiggestInRandom {
 
         Random randomGenerator = new Random();
         int first = randomGenerator.nextInt(9) + 1;
-        int second = randomGenerator.nextInt(11);
-        int third = randomGenerator.nextInt(11);
+        int second = randomGenerator.nextInt(10);
+        int third = randomGenerator.nextInt(10);
 
         return (first * 100 + second * 10 + third);
     }
