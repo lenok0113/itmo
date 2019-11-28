@@ -6,7 +6,9 @@ package com.ifmo.lesson4;
  * оканчивается ссылкой со значением {@code null}.
  */
 public class LinkedList {
-    /** Ссылка на первый элемент списка. */
+    /**
+     * Ссылка на первый элемент списка.
+     */
     private Item head;
 
     /**
@@ -14,10 +16,20 @@ public class LinkedList {
      *
      * @param val Значение, которое будет добавлено.
      */
+
+    LinkedList(Item head) {
+        this.head = head;
+    }
+
     public void add(Object val) {
         // TODO implement
-        Item item = new Item(value);
-        if (head != null) head.next = item;
+        Item item = new Item(val);
+        if (head != null)  {
+            Item rt = head;
+            while (rt.next != null)
+                rt = rt.next;
+            rt.next = item;
+        }
         else head = item;
     }
 
@@ -28,13 +40,15 @@ public class LinkedList {
      * @return Значение, которое находится по индексу
      * или {@code null}, если не найдено.
      */
+
     public Object get(int i) {
         // TODO implement
         Item item = head;
         if (item == null)
             return null;
+        if (i == 0) return item;
         for (int k = 0; k < i; k++) {
-            if (item.next != null) item = item.next;
+            if (item != null && item.next != null) item = item.next;
             else return null;
         }
         return item;
@@ -47,14 +61,20 @@ public class LinkedList {
      * @param i Индекс, по которому будет удален элемент.
      * @return Удаленное значение или {@code null}, если не найдено.
      */
+
     public Object remove(int i) {
         // TODO implement
         Item item = head;
-        Item del = get(i);
+        Item del = (Item) get(i); // 15
+        if (del == head) {
+            head = head.next;
+            return del;
+        }
         while (item.next != del) {
+            if (item.next == null) return null;
             item = item.next;
         }
-        item.next = del.next
+        item.next = del.next;
         return del;
     }
 }
