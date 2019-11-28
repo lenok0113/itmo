@@ -22,6 +22,7 @@ class Item {
      * @param value Значение, которое будет сохранено
      *              в этом элементе.
      */
+
     Item(Object value) {
         this.value = value;
     }

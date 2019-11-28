@@ -24,13 +24,10 @@ public class LinkedList {
     public void add(Object val) {
         // TODO implement
         Item item = new Item(val);
-        if (head != null)  {
-            Item rt = head;
-            while (rt.next != null)
-                rt = rt.next;
-            rt.next = item;
-        }
-        else head = item;
+        Item rt = head;
+        while (rt.next != null)
+            rt = rt.next;
+        rt.next = item;
     }
 
     /**
@@ -78,7 +75,7 @@ public class LinkedList {
         return del;
     }
 
-    /* public static void main(String[] args) {
+    /*public static void main(String[] args) {
         LinkedList list = new LinkedList(new Item(9));
         list.add(15);
         list.add(71);
