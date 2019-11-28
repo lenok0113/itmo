@@ -4,9 +4,9 @@ public class BookInLibrary {
     Book book;
     int quantity;
 
-    public BookInLibrary(Book book, int quantity) {
+    public BookInLibrary(Book book, int q) {
         this.book = book;
-        this.quantity = quantity;
+        this.quantity = q;
     }
 
     public boolean equals(BookInLibrary a, BookInLibrary b) {

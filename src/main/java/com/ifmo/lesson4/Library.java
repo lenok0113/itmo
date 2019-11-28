@@ -44,6 +44,7 @@ public class Library {
     public Library(int maxBookKinds) {
         // TODO implement
         // Возможно здесь следует сынициализировать массив.
+
         this.maxBookKinds = maxBookKinds;
         this.books = new BookInLibrary[maxBookKinds];
         this.currentBookKinds = 0;
